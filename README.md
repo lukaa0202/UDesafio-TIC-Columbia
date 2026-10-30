@@ -26,7 +26,7 @@ La versión 3 conserva todo el contenido y las mecánicas de la versión 2 y reh
 ## Cómo abrirlo
 
 - **Directo:** abrir `index.html` con doble clic. Funciona sin servidor y sin internet (la tipografía pixel está incluida).
-- **GitHub Pages:** subir el contenido de esta carpeta tal cual a un repositorio y activar Pages sobre la rama principal. Se conservan las rutas relativas.
+- **GitHub Pages:** en el siguiente link: https://lukaa0202.github.io/UDesafio-TIC-Columbia/
 - **Servidor local (para las pruebas):** `python3 -m http.server 8765` y abrir `http://localhost:8765/`.
 
 La partida y los ajustes se guardan en el navegador (localStorage). Si se usa otro navegador u otro equipo, la partida empieza de cero.
