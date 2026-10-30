@@ -1,0 +1,1398 @@
+{
+  "fecha": "2026-10-30T02:58:23.562Z",
+  "url": "http://localhost:8765/",
+  "duracion_s": 394,
+  "pruebas": 135,
+  "aprobadas": 135,
+  "fallidas": 0,
+  "ciclos": {
+    "total": 100,
+    "aprobados": 100,
+    "por_escenario": [
+      {
+        "escenario": "sin_errores",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "multiples_errores",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "abandono_reapertura",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "energia_agotada",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "recuperacion",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "guardado_danado",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "banco_ampliado",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "importacion_invalida",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "cambio_resolucion",
+        "total": 10,
+        "aprobados": 10
+      },
+      {
+        "escenario": "raton_y_teclado",
+        "total": 10,
+        "aprobados": 10
+      }
+    ]
+  },
+  "resultados": [
+    {
+      "nombre": "01 Inicio del juego",
+      "ok": true,
+      "detalles": [
+        "ok: se ve la pantalla de título",
+        "ok: el título es DEPURADOR TIC",
+        "ok: sin guardado no aparece CONTINUAR"
+      ]
+    },
+    {
+      "nombre": "02 Menú principal (teclado)",
+      "ok": true,
+      "detalles": [
+        "ok: el foco inicial está en NUEVA PARTIDA",
+        "ok: flecha abajo mueve el cursor",
+        "ok: Enter en NUEVA PARTIDA inicia la partida con el diálogo de BORNE",
+        "ok: el diálogo identifica al personaje",
+        "ok: el texto aparece de forma progresiva (4 < 58)",
+        "ok: Enter completa la línea",
+        "ok: Enter avanza a la línea siguiente",
+        "ok: al cerrar el diálogo se puede explorar"
+      ]
+    },
+    {
+      "nombre": "03 Movimiento hacia arriba",
+      "ok": true,
+      "detalles": [
+        "ok: ArrowUp desplaza al personaje (528,316 → 528,294)",
+        "ok: orientación arriba"
+      ]
+    },
+    {
+      "nombre": "04 Movimiento hacia abajo",
+      "ok": true,
+      "detalles": [
+        "ok: ArrowDown desplaza al personaje (528,294 → 528,316)",
+        "ok: orientación abajo"
+      ]
+    },
+    {
+      "nombre": "05 Movimiento hacia la izquierda",
+      "ok": true,
+      "detalles": [
+        "ok: ArrowLeft desplaza al personaje (528,316 → 506,316)",
+        "ok: orientación izq"
+      ]
+    },
+    {
+      "nombre": "06 Movimiento hacia la derecha",
+      "ok": true,
+      "detalles": [
+        "ok: ArrowRight desplaza al personaje (506,316 → 528,316)",
+        "ok: orientación der"
+      ]
+    },
+    {
+      "nombre": "06b Animación de caminata (cuadros)",
+      "ok": true,
+      "detalles": [
+        "ok: se usan varios cuadros de caminata: 3,0,1,2"
+      ]
+    },
+    {
+      "nombre": "07 Colisiones sólidas",
+      "ok": true,
+      "detalles": [
+        "ok: contra la pared el personaje no avanza (y 261.3 → 261.3)",
+        "ok: la posición final es libre (no atravesó la pared)",
+        "ok: ninguna pared es transitable",
+        "ok: los objetos y personajes bloquean el paso"
+      ]
+    },
+    {
+      "nombre": "08 Acceso a todas las habitaciones (caminando)",
+      "ok": true,
+      "detalles": [
+        "ok: se llegó caminando a fund (zona fund)",
+        "ok: regreso al vestíbulo desde fund",
+        "ok: se llegó caminando a busq (zona busq)",
+        "ok: regreso al vestíbulo desde busq",
+        "ok: se llegó caminando a virt (zona virt)",
+        "ok: regreso al vestíbulo desde virt",
+        "ok: se llegó caminando a ofi (zona ofi)",
+        "ok: regreso al vestíbulo desde ofi",
+        "ok: se llegó caminando a colab (zona colab)",
+        "ok: regreso al vestíbulo desde colab",
+        "ok: se llegó caminando a inv (zona inv)",
+        "ok: regreso al vestíbulo desde inv",
+        "ok: 6 de 6 sectores recorridos"
+      ]
+    },
+    {
+      "nombre": "09 Acceso a las 16 terminales (caminando y con clic)",
+      "ok": true,
+      "detalles": [
+        "ok: 16 de 16 terminales abiertas al llegar caminando"
+      ]
+    },
+    {
+      "nombre": "09b Interacción con personajes, carteles y objetos",
+      "ok": true,
+      "detalles": [
+        "ok: clic en BORNE: camina y abre su diálogo",
+        "ok: el diálogo muestra el nombre del personaje",
+        "ok: la tecla E vuelve a hablar con el personaje de enfrente"
+      ]
+    },
+    {
+      "nombre": "10 Apertura de terminal (teclado)",
+      "ok": true,
+      "detalles": [
+        "ok: se abre la terminal correcta",
+        "ok: muestra unidad/tema",
+        "ok: cuatro alternativas",
+        "ok: ventana con aria-modal"
+      ]
+    },
+    {
+      "nombre": "11 Selección de respuestas y confirmación",
+      "ok": true,
+      "detalles": [
+        "ok: flecha abajo selecciona B",
+        "ok: se pide confirmación de la selección",
+        "ok: la tecla D selecciona D sin ejecutar",
+        "ok: seleccionar no ejecuta"
+      ]
+    },
+    {
+      "nombre": "13 Respuesta incorrecta, 15 penalización y 14 explicación",
+      "ok": true,
+      "detalles": [
+        "ok: energía −25 (100 → 75)",
+        "ok: el comando fallido queda registrado",
+        "ok: se muestra el reporte de incidente",
+        "ok: el reporte incluye diagnóstico y fuente",
+        "ok: la opción fallida queda deshabilitada"
+      ]
+    },
+    {
+      "nombre": "Regresión: los comandos fallidos NO se rehabilitan al salir y reabrir",
+      "ok": true,
+      "detalles": [
+        "ok: tras reabrir, la opción fallida sigue deshabilitada",
+        "ok: intentar ejecutarla de nuevo no descuenta energía"
+      ]
+    },
+    {
+      "nombre": "12 Respuesta correcta, 16 reparación y 17 recursos",
+      "ok": true,
+      "detalles": [
+        "ok: terminal reparada",
+        "ok: +50 recursos por acertar en el segundo intento",
+        "ok: mensaje de estabilización",
+        "ok: estabilidad al 100%",
+        "ok: +100 recursos al primer intento (respondida con el mouse)"
+      ]
+    },
+    {
+      "nombre": "Regresión: una terminal reparada no se puede volver a responder",
+      "ok": true,
+      "detalles": [
+        "ok: en el Modo Directo aparece como estable y deshabilitada"
+      ]
+    },
+    {
+      "nombre": "18 Energía agotada y 19 reinicio",
+      "ok": true,
+      "detalles": [
+        "ok: tras 4 errores la energía llega a 0",
+        "ok: aparece REINICIAR SISTEMA",
+        "ok: sin energía no se pueden ejecutar comandos",
+        "ok: reinicio: energía 100 y 1 reinicio registrado",
+        "ok: las reparaciones se conservan tras el reinicio",
+        "ok: los 3 comandos fallidos siguen deshabilitados tras el reinicio"
+      ]
+    },
+    {
+      "nombre": "22 Guardado y 23 recuperación de partida",
+      "ok": true,
+      "detalles": [
+        "ok: el título ofrece CONTINUAR con el progreso",
+        "ok: se recuperan reparadas, fallidos, energía, recursos, errores y reinicios",
+        "ok: se recupera el tiempo (105s → 105s)",
+        "ok: se recupera la posición del personaje"
+      ]
+    },
+    {
+      "nombre": "24 Configuración",
+      "ok": true,
+      "detalles": [
+        "ok: Reducir movimiento aplica la clase calma",
+        "ok: Texto grande",
+        "ok: Tipografía de lectura",
+        "ok: Velocidad del texto",
+        "ok: los ajustes persisten tras recargar"
+      ]
+    },
+    {
+      "nombre": "25 Controles de audio",
+      "ok": true,
+      "detalles": [
+        "ok: el audio se activa después de un gesto del usuario",
+        "ok: música y efectos son independientes (0/30)",
+        "ok: suena la pista del título",
+        "ok: en el mapa suena la pista del sector: fund",
+        "ok: en la terminal cambia la música",
+        "ok: al volver suena la música del Núcleo de Virtualización"
+      ]
+    },
+    {
+      "nombre": "26 Accesibilidad",
+      "ok": true,
+      "detalles": [
+        "ok: el resto de la página queda inerte con un menú abierto",
+        "ok: todos los controles visibles tienen nombre accesible",
+        "ok: Tab no sale del menú abierto",
+        "ok: no hay tabindex positivos",
+        "ok: al cerrar, el foco vuelve al mapa",
+        "ok: el mapa tiene instrucciones para lectores de pantalla",
+        "ok: región aria-live para anuncios",
+        "ok: contraste blanco/negro = 21.0:1 (AA ≥ 4.5)",
+        "ok: contraste amarillo/negro = 16.8:1 (AA ≥ 4.5)",
+        "ok: contraste gris/negro = 10.7:1 (AA ≥ 4.5)",
+        "ok: contraste tenue/negro = 6.2:1 (AA ≥ 4.5)",
+        "ok: contraste rojo/negro = 6.9:1 (AA ≥ 4.5)",
+        "ok: contraste verde/negro = 13.1:1 (AA ≥ 4.5)",
+        "ok: contraste naranja/negro = 11.6:1 (AA ≥ 4.5)",
+        "ok: si el sistema pide reducir movimiento, se activa solo"
+      ]
+    },
+    {
+      "nombre": "27 Importación del banco de preguntas",
+      "ok": true,
+      "detalles": [
+        "ok: archivo inválido: 1 válido y 3 con errores",
+        "ok: detecta id duplicado de un original",
+        "ok: explica cada error",
+        "ok: detecta id repetido dentro del archivo",
+        "ok: texto mal formado: error claro",
+        "ok: no se puede aplicar una importación inválida",
+        "ok: el banco no cambió con importaciones inválidas",
+        "ok: vista previa: 3 retos válidos del ejemplo",
+        "ok: el banco pasa a 19 retos",
+        "ok: cada reto importado tiene su terminal auxiliar en el mapa",
+        "ok: el HUD muestra el nuevo total",
+        "ok: la terminal auxiliar abre su reto",
+        "ok: el reto importado se puede resolver",
+        "ok: las terminales auxiliares son accesibles"
+      ]
+    },
+    {
+      "nombre": "28 Exportación de datos",
+      "ok": true,
+      "detalles": [
+        "ok: exporta el banco completo (19 retos)",
+        "ok: el banco exportado conserva los 16 originales",
+        "ok: RESTAURAR vuelve al banco original",
+        "ok: el progreso del reto quitado se elimina sin romper la partida"
+      ]
+    },
+    {
+      "nombre": "20 Finalización de la partida y 21 informe final",
+      "ok": true,
+      "detalles": [
+        "ok: se muestra el Informe de Desempeño completo",
+        "ok: 16 de 16 reparadas",
+        "ok: el informe incluye todas las secciones",
+        "ok: la precisión coincide con los intentos (80%)",
+        "ok: desempeño por unidad",
+        "ok: lista contenidos para repasar",
+        "ok: IMPRIMIR llama a la impresión del navegador",
+        "ok: CSV exportado con una fila por reto",
+        "ok: JSON exportado con resultados",
+        "ok: se puede seguir explorando después del informe",
+        "ok: el tiempo se detiene al terminar"
+      ]
+    },
+    {
+      "nombre": "Recuperación de una partida terminada",
+      "ok": true,
+      "detalles": [
+        "ok: el título indica partida completada"
+      ]
+    },
+    {
+      "nombre": "Nueva partida con confirmación",
+      "ok": true,
+      "detalles": [
+        "ok: pide confirmación",
+        "ok: NO conserva la partida",
+        "ok: SÍ inicia una partida limpia"
+      ]
+    },
+    {
+      "nombre": "Guardado dañado",
+      "ok": true,
+      "detalles": [
+        "ok: avisa que el guardado estaba dañado",
+        "ok: no ofrece continuar un guardado dañado",
+        "ok: detecta valores imposibles",
+        "ok: descarta terminales inexistentes y completa datos faltantes",
+        "ok: recalcula los recursos a partir del progreso real (999 → 100)"
+      ]
+    },
+    {
+      "nombre": "29 Diseño móvil (390×844, táctil)",
+      "ok": true,
+      "detalles": [
+        "ok: sin desplazamiento horizontal en el título",
+        "ok: el diálogo se avanza con el botón USAR",
+        "ok: sin desplazamiento horizontal en el mapa",
+        "ok: el escenario muestra 222×281 px de mundo a escala ×5",
+        "ok: el escenario entra en la pantalla",
+        "ok: controles táctiles visibles",
+        "ok: la cruceta táctil mueve al personaje",
+        "ok: tocar a un personaje camina hasta él y habla",
+        "ok: terminal sin desplazamiento horizontal",
+        "ok: se responde tocando (seleccionar + confirmar)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "30a Tablet (820×1180, táctil)",
+      "ok": true,
+      "detalles": [
+        "ok: sin desplazamiento horizontal en el título",
+        "ok: el diálogo se avanza con el botón USAR",
+        "ok: sin desplazamiento horizontal en el mapa",
+        "ok: el escenario muestra 338×254 px de mundo a escala ×7",
+        "ok: el escenario entra en la pantalla",
+        "ok: controles táctiles visibles",
+        "ok: la cruceta táctil mueve al personaje",
+        "ok: tocar a un personaje camina hasta él y habla",
+        "ok: terminal sin desplazamiento horizontal",
+        "ok: se responde tocando (seleccionar + confirmar)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "30b Portátil (1366×768)",
+      "ok": true,
+      "detalles": [
+        "ok: sin desplazamiento horizontal en el título",
+        "ok: el diálogo se avanza con teclado",
+        "ok: sin desplazamiento horizontal en el mapa",
+        "ok: el escenario muestra 504×321 px de mundo a escala ×2",
+        "ok: el escenario entra en la pantalla",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "30c Teléfono horizontal (844×390, táctil)",
+      "ok": true,
+      "detalles": [
+        "ok: sin desplazamiento horizontal en el título",
+        "ok: el diálogo se avanza con el botón USAR",
+        "ok: sin desplazamiento horizontal en el mapa",
+        "ok: el escenario muestra 618×239 px de mundo a escala ×4",
+        "ok: el escenario entra en la pantalla",
+        "ok: controles táctiles visibles",
+        "ok: la cruceta táctil mueve al personaje",
+        "ok: tocar a un personaje camina hasta él y habla",
+        "ok: terminal sin desplazamiento horizontal",
+        "ok: se responde tocando (seleccionar + confirmar)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "30d Escritorio grande (1920×1080)",
+      "ok": true,
+      "detalles": [
+        "ok: sin desplazamiento horizontal en el título",
+        "ok: el diálogo se avanza con teclado",
+        "ok: sin desplazamiento horizontal en el mapa",
+        "ok: el escenario muestra 336×252 px de mundo a escala ×3",
+        "ok: el escenario entra en la pantalla",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "30e Cambio de resolución en plena partida",
+      "ok": true,
+      "detalles": [
+        "ok: 390×844: vista 370×468 ×1",
+        "ok: 1024×768: vista 496×321 ×2",
+        "ok: 700×500: vista 680×390 ×1",
+        "ok: 1280×860: vista 336×245 ×3",
+        "ok: el juego sigue operativo tras los cambios de tamaño"
+      ]
+    },
+    {
+      "nombre": "Regresión: correspondencia con DEPURADOR TIC v2",
+      "ok": true,
+      "detalles": [
+        "ok: la versión anterior tenía 16 terminales",
+        "ok: las 16 terminales conservan id, sector, nombre y falla",
+        "ok: la versión anterior usaba −25 de energía y +100/+50: se mantienen (pruebas 13 y 17)",
+        "ok: retos.js es idéntico al original (16 preguntas, alternativas, respuestas, retroalimentación y fuentes)",
+        "ok: los seis sectores conservan sus nombres",
+        "ok: sin errores de consola: "
+      ]
+    },
+    {
+      "nombre": "Ciclo 001 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 002 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 003 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 004 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 005 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (9 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 006 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":2}",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 007 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 008 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {\"retos\": [{\"id\": \"x\"}]}",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 009 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 010 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 011 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 012 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 013 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 014 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 015 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (6 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 016 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":3,\"hp\":50,\"res\":0,\"errores\":0,\"rein",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 017 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 018 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {\"retos\": [{\"id\": \"x\"}]}",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 019 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 020 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 021 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 022 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 023 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 024 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 025 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (10 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 026 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":2}",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 027 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 028 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: []",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 029 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 030 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 031 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 032 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 033 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 034 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 035 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (10 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 036 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":3,\"hp\":50,\"res\":0,\"errores\":0,\"rein",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 037 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 038 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {\"retos\":[{\"id\":\"Z1\",\"unidad\":\"U1\",\"cate",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 039 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 040 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 041 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 042 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 043 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 044 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 045 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (3 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 046 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":3,\"hp\":50,\"res\":-1,\"errores\":0,\"rei",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 047 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 048 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {\"retos\": [{\"id\": \"x\"}]}",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 049 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 050 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 051 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 052 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 053 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 054 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 055 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (5 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 056 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":2}",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 057 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 058 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: []",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 059 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 060 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 061 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 062 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 063 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 064 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 065 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (10 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 066 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":2}",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 067 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 068 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: []",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 069 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 070 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 071 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 072 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 073 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 074 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 075 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (6 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 076 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 077 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 078 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {,}",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 079 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 080 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 081 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 082 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 083 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 084 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 085 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (11 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 086 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: guardado dañado descartado con aviso: {\"v\":2}",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 087 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 088 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {\"retos\":[{\"id\":\"Z1\",\"unidad\":\"U1\",\"cate",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 089 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 090 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 091 · sin_errores",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 092 · multiples_errores",
+      "ok": true,
+      "detalles": [
+        "ok: 3 errores (la energía no baja de 25 sin reinicio), 6 terminales reparadas",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 093 · abandono_reapertura",
+      "ok": true,
+      "detalles": [
+        "ok: reapertura 1: la opción fallida sigue deshabilitada",
+        "ok: reapertura 2: la opción fallida sigue deshabilitada",
+        "ok: reapertura 3: la opción fallida sigue deshabilitada",
+        "ok: abandonar no cambia energía ni errores",
+        "ok: cada abandono queda en el registro",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 094 · energia_agotada",
+      "ok": true,
+      "detalles": [
+        "ok: la energía se agota al cuarto error",
+        "ok: reinicio correcto y reparaciones intactas",
+        "ok: se puede reparar la terminal después del reinicio",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 095 · recuperacion",
+      "ok": true,
+      "detalles": [
+        "ok: estado idéntico tras recargar (6 reparadas)",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 096 · guardado_danado",
+      "ok": true,
+      "detalles": [
+        "ok: un guardado «null» se ignora",
+        "ok: se puede empezar de nuevo",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 097 · banco_ampliado",
+      "ok": true,
+      "detalles": [
+        "ok: 19 retos con el banco ampliado",
+        "ok: se completan los 19 y aparece el informe",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 098 · importacion_invalida",
+      "ok": true,
+      "detalles": [
+        "ok: no se puede aplicar: {\"retos\": [{\"id\": \"x\"}]}",
+        "ok: el banco queda intacto",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 099 · cambio_resolucion",
+      "ok": true,
+      "detalles": [
+        "ok: sin desborde a 390px",
+        "ok: sin desborde a 844px",
+        "ok: sin desborde a 1280px",
+        "ok: sin errores de consola "
+      ]
+    },
+    {
+      "nombre": "Ciclo 100 · raton_y_teclado",
+      "ok": true,
+      "detalles": [
+        "ok: termina con el informe",
+        "ok: 16/16 sin errores y 1600 recursos",
+        "ok: sin errores de consola "
+      ]
+    }
+  ]
+}

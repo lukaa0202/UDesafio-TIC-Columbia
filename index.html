@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Depurador TIC</title>
+<meta name="description" content="DEPURADOR TIC: RPG pixel art educativo del Desafío TIC. Recorre el edificio, repara 16 terminales y aprende con retroalimentación formativa.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<link rel="stylesheet" href="css/juego.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="hud" id="hud" hidden>
+    <span class="marca">DEPURADOR TIC</span>
+    <div class="energia"><span class="lbl" id="en-lbl">ENERGÍA</span><div class="barra" id="hp-bar" role="progressbar" aria-labelledby="en-lbl" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i id="hp-fill" style="width:100%"></i></div><span id="hp-val">100/100</span></div>
+    <div class="datos" aria-label="Progreso de la partida"><span>REPARADAS <b id="st-fixed">0/16</b></span><span>RECURSOS <b id="st-res">0</b></span><span>TIEMPO <b id="st-time">00:00</b></span></div>
+    <button class="btn" id="btn-menu" type="button" aria-haspopup="dialog">MENÚ</button>
+  </header>
+  <main class="escenario" id="escenario">
+    <canvas id="mundo" tabindex="0" role="application" aria-roledescription="mapa del juego" aria-label="Edificio del Depurador TIC" aria-describedby="ayuda-mapa"></canvas>
+    <p id="ayuda-mapa" class="sr-only">Muévete con las flechas o W A S D. Junto a una terminal, persona o cartel presiona Enter, Espacio, E o Z para interactuar. Escape abre el menú de pausa, donde están los Ajustes y el Modo Directo para ir a cualquier reto sin recorrer el mapa. También puedes hacer clic en un lugar del mapa para caminar hasta allí.</p>
+    <div class="cartel-zona" id="cartel-zona" aria-hidden="true"></div>
+    <section class="dialogo" id="dialogo" hidden role="dialog" aria-modal="false" aria-labelledby="dlg-quien" aria-describedby="dlg-completo">
+      <canvas id="dlg-retrato" width="20" height="22" aria-hidden="true"></canvas>
+      <div>
+        <p class="quien" id="dlg-quien"></p>
+        <p class="linea" id="dlg-visible" aria-hidden="true"></p>
+        <p class="sr-only" id="dlg-completo"></p>
+      </div>
+      <button class="seguir" id="dlg-seguir" type="button">Continuar <span aria-hidden="true">▼</span></button>
+    </section>
+  </main>
+  <div class="tactil" id="tactil" aria-hidden="true">
+    <div class="cruz"><button type="button" data-d="arriba" tabindex="-1">▲</button><button type="button" data-d="izq" tabindex="-1">◀</button><button type="button" data-d="der" tabindex="-1">▶</button><button type="button" data-d="abajo" tabindex="-1">▼</button></div>
+    <div class="botones-ab"><button type="button" id="tb-b" tabindex="-1">MENÚ</button><button type="button" id="tb-a" tabindex="-1">USAR</button></div>
+  </div>
+  <p class="pie" id="pie"><kbd>←↑↓→</kbd> moverse · <kbd>E</kbd>/<kbd>ENTER</kbd> usar · <kbd>ESC</kbd> menú · clic para caminar</p>
+</div>
+<section class="pantalla" id="pantalla" hidden></section>
+<div id="anuncios" class="sr-only" aria-live="polite"></div>
+<div id="alertas" class="sr-only" aria-live="assertive"></div>
+<script src="js/retos.js"></script>
+<script src="js/arte.js"></script>
+<script src="js/mundo.js"></script>
+<script src="js/sonido.js"></script>
+<script src="js/banco.js"></script>
+<script src="js/guardado.js"></script>
+<script src="js/dialogos.js"></script>
+<script src="js/juego.js"></script>
+</body>
+</html>

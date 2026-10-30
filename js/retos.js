@@ -1,0 +1,238 @@
+// Ruleta TIC · banco de retos
+// Cada reto: id, unidad, categoria, eps (pide identificar entrada, proceso y salida),
+// pregunta, opciones (A-D en este orden), correcta (0 = A), retro y fuente.
+// Para corregir un contenido, editar solo este archivo.
+
+window.CATEGORIAS = [
+  { id: "fund",  nombre: "Fundamentos",    detalle: "U1 · Fundamentos tecnológicos y modelo sistémico", color: "#1F5FAD" },
+  { id: "virt",  nombre: "Virtualización", detalle: "U2 · Virtualización y sistemas operativos",        color: "#6D3BA6" },
+  { id: "busq",  nombre: "Búsqueda",       detalle: "U3 · Navegación, búsqueda y accesibilidad",       color: "#0E6E52" },
+  { id: "ofi",   nombre: "Ofimática",      detalle: "U4 · Herramientas ofimáticas",                    color: "#A63D14" },
+  { id: "colab", nombre: "Colaboración",   detalle: "U6 y U7 · Colaboración digital y multimedia",     color: "#9B2257" },
+  { id: "inv",   nombre: "Investigación",  detalle: "U9 · Investigación académica digital",            color: "#7A5300" }
+];
+
+window.RETOS = [
+  {
+    id: "U1-1", unidad: "U1", categoria: "fund", eps: true,
+    titulo: "Cajero automático",
+    pregunta: "Retiras dinero de un cajero automático. ¿Cuál es la descripción correcta de entrada, proceso y salida?",
+    opciones: [
+      "Entrada: tarjeta, PIN y monto solicitado. Proceso: verificación de identidad, validación y cálculo del saldo disponible. Salida: dinero en efectivo y comprobante impreso.",
+      "Entrada: dinero en efectivo y comprobante. Proceso: verificación de identidad, validación y cálculo del saldo. Salida: tarjeta, PIN y monto.",
+      "Entrada: tarjeta y PIN. Proceso: entrega del dinero. Salida: verificación de identidad.",
+      "Entrada: tarjeta, PIN y monto. Proceso: dinero en efectivo y comprobante. Salida: cálculo del saldo."
+    ],
+    correcta: 0,
+    retro: "A separa bien lo que el sistema recibe, lo que hace con eso y lo que entrega. B invierte entrada y salida. C pone la verificación de identidad como resultado, cuando es parte del trabajo interno. D mezcla el dinero (que es resultado) con el proceso.",
+    fuente: "C01 (Ferreira-Delgado, 2026e), diapositiva «Caso 1: Diseccionando un cajero automático», e infografía «¿Cómo funciona la tecnología?» (Ferreira-Delgado, 2026a), tabla «La tecnología en la práctica»."
+  },
+  {
+    id: "U1-2", unidad: "U1", categoria: "fund", eps: true,
+    titulo: "Respuesta de IA bien redactada",
+    pregunta: "Le escribes a una IA: «Explícame qué es una instantánea (snapshot) en una máquina virtual». Responde con un texto claro, seguro y bien redactado, pero sin ninguna fuente. Según el modelo E→P→S de la IA generativa, ¿qué conclusión es correcta?",
+    opciones: [
+      "Entrada: tu prompt. Proceso: el modelo calcula probabilidades a partir de patrones aprendidos. Salida: una respuesta plausible, pero no necesariamente verdadera, que hay que verificar con una fuente confiable.",
+      "Entrada: tu prompt. Proceso: la IA entiende el tema como una persona. Salida: una respuesta correcta, porque está bien redactada y es segura.",
+      "Entrada: la base de datos de la IA. Proceso: busca el dato exacto en fuentes verificadas. Salida: una respuesta verificada que ya puedes citar.",
+      "Entrada: tu prompt. Proceso: el modelo analiza el texto. Salida: una respuesta falsa, porque la IA siempre inventa."
+    ],
+    correcta: 0,
+    retro: "A coincide con el material: la IA procesa el prompt con probabilidades y su salida es plausible, no garantizada, por eso se hace verificación cruzada. B falla porque los modelos no comprenden como una persona y una buena redacción no garantiza que sea correcta. C falla porque el modelo no verifica nada: calcula probabilidades de texto. D exagera: la respuesta puede ser correcta o no, y por eso hay que comprobarla.",
+    fuente: "C01 (Ferreira-Delgado, 2026e), diapositiva «Si la Inteligencia Artificial responde preguntas, ¿significa que entiende?»; C03-2 (Ferreira-Delgado, 2026i), secciones 4 y 7; C03-3 (Ferreira-Delgado, 2026b), diapositiva «Recordando: la IA generativa en el modelo E-P-S»."
+  },
+  {
+    id: "U1-3", unidad: "U1", categoria: "fund", eps: false,
+    titulo: "Mejorar un prompt",
+    pregunta: "Ya investigaste con tus propias fuentes los tipos de redes (LAN, WAN, MAN, PAN) y tienes un esquema en Drive. Quieres que la IA te sugiera la estructura de una presentación, pero tu prompt «Dame algo sobre redes» devolvió una respuesta genérica. ¿Qué versión es la mejor?",
+    opciones: [
+      "«Dame mucha información completa y detallada sobre redes, todo lo que sepas.»",
+      "«Actúa como diseñador instruccional para estudiantes de primer semestre de Ingeniería Informática. Tengo este esquema sobre tipos de redes: [pego el esquema]. Sugiere una estructura de 5 diapositivas, indicando el contenido y un recurso visual para cada una. Máximo 3 líneas por diapositiva.»",
+      "«Actúa como experto en redes y explícame las redes.»",
+      "«Redes, en una tabla.»"
+    ],
+    correcta: 1,
+    retro: "B incluye los cuatro elementos del checklist: rol, tarea con verbo claro, restricción y formato. Además usa lo que ya investigaste, como pide la regla del curso. A es más largo pero igual de vago. C solo agrega un rol y le pide a la IA que explique por primera vez. D define el formato, pero no da contexto, tarea ni límites.",
+    fuente: "C03-2 (Ferreira-Delgado, 2026i), sección 6 (checklist); C03-3 (Ferreira-Delgado, 2026b), diapositiva «Del esquema al PPT: pídele a la IA una estructura» (prompt modelo)."
+  },
+  {
+    id: "U2-1", unidad: "U2", categoria: "virt", eps: false,
+    titulo: "Capa física y capa lógica",
+    pregunta: "En una notebook que usas para virtualizar tienes: la memoria RAM de 16 GB, el archivo Ubuntu.vdi, la placa de red, la instantánea «antes de actualizar» y los núcleos del procesador. ¿Cuál es la clasificación correcta?",
+    opciones: [
+      "Física: RAM, Ubuntu.vdi y placa de red. Lógica: instantánea y núcleos.",
+      "Física: RAM, placa de red y núcleos del procesador. Lógica: Ubuntu.vdi e instantánea.",
+      "Física: todos, menos la instantánea. Lógica: solo la instantánea.",
+      "Física: Ubuntu.vdi e instantánea. Lógica: RAM, placa de red y núcleos."
+    ],
+    correcta: 1,
+    retro: "B es correcta: RAM, placa de red y núcleos son hardware que se toca. El disco virtual es un archivo y la instantánea es una copia del estado de la máquina virtual, así que ambos son capa lógica. A y C tratan el disco virtual como físico solo porque ocupa espacio en el disco real, pero sigue siendo un archivo. D invierte las capas.",
+    fuente: "Virtualización y sistemas operativos (Ferreira-Delgado, 2026k), secciones 2 y 3 (tabla de capas y términos) y sección 8 (Caso 4)."
+  },
+  {
+    id: "U2-2", unidad: "U2", categoria: "virt", eps: false,
+    titulo: "¿Qué le conviene a la estudiante?",
+    pregunta: "Una estudiante tiene una notebook con Windows y 8 GB de RAM. Necesita usar Linux para una materia, pero no quiere perder su sistema actual. ¿Qué le conviene?",
+    opciones: [
+      "Borrar Windows e instalar Linux en su lugar.",
+      "Crear una máquina virtual con Linux (por ejemplo con VirtualBox) y asignarle 4 GB de RAM.",
+      "Crear una máquina virtual y asignarle 7 GB para que Linux vaya rápido.",
+      "Crear una máquina virtual y asignarle los 8 GB y todos los núcleos para que rinda al máximo."
+    ],
+    correcta: 1,
+    retro: "B permite usar Linux sin tocar Windows, y 4 GB es un equilibrio razonable. Con 7 GB, a Windows le queda 1 GB y todo se vuelve lento. D deja al sistema anfitrión sin recursos. A resuelve la materia, pero pierde el sistema que ella quería conservar.",
+    fuente: "Virtualización y sistemas operativos (Ferreira-Delgado, 2026k), secciones 3, 4, 5 y 8 (Caso 1)."
+  },
+  {
+    id: "U3-1", unidad: "U3", categoria: "busq", eps: false,
+    titulo: "Operadores de búsqueda",
+    pregunta: "Tu grupo investiga virtualización en la nube, pero los resultados se llenan de páginas que venden servidores. Quieres solo PDFs y excluir \"hosting\". ¿Qué escribes?",
+    codigo: true,
+    opciones: [
+      "virtualización nube hosting",
+      "\"virtualización\" \"computación en la nube\" -hosting filetype:pdf",
+      "virtualización OR nube OR hosting filetype:pdf",
+      "virtualización AND hosting -nube"
+    ],
+    correcta: 1,
+    retro: "B usa comillas (frase exacta), - (excluye \"hosting\") y filetype:pdf (solo PDFs). A no filtra nada e incluye \"hosting\". C usa OR, que amplía los resultados en vez de reducirlos. D excluye \"nube\", justo el tema que buscas.",
+    fuente: "Google. (s. f.). Refine Google searches. Google Search Help (comillas, signo menos y filetype:)."
+  },
+  {
+    id: "U3-2", unidad: "U3", categoria: "busq", eps: false,
+    titulo: "Fuente confiable",
+    pregunta: "Necesitas definir \"hipervisor tipo 1\" para tu trabajo. ¿Cuál usas como fuente principal?",
+    opciones: [
+      "Un video viral de TikTok",
+      "La documentación oficial de un fabricante de hipervisores",
+      "La respuesta más votada de un foro anónimo",
+      "Wikipedia, como única fuente"
+    ],
+    correcta: 1,
+    retro: "La documentación oficial da la terminología correcta desde el origen. Wikipedia sirve para orientarse, pero no como única fuente. Ninguna fuente alcanza sola: hay que cruzarla con una segunda.",
+    fuente: "C03-3 (Ferreira-Delgado, 2026b), diapositivas «¿Dónde buscar información confiable?» y «¿Por qué no le preguntamos directamente a la IA?»."
+  },
+  {
+    id: "U3-3", unidad: "U3", categoria: "busq", eps: false,
+    titulo: "Falla de accesibilidad (WCAG)",
+    pregunta: "El portal de la facultad publica las fechas de examen en texto gris claro sobre fondo blanco. Una estudiante con baja visión no logra leerlas. ¿Qué principio de las WCAG no se está cumpliendo?",
+    opciones: ["Perceptible", "Operable", "Comprensible", "Robusto"],
+    correcta: 0,
+    retro: "Perceptible exige que la información y los componentes de la interfaz se puedan presentar de modo que los usuarios los perciban: con poco contraste el texto está ahí, pero no se distingue. Operable se refiere a poder interactuar con el contenido (por ejemplo, con teclado). Comprensible, a entender el contenido y la interfaz. Robusto, a que el contenido pueda ser interpretado por distintas tecnologías asistivas.",
+    fuente: "W3C Web Accessibility Initiative (2025), Introduction to Understanding WCAG 2.2. El contraste mínimo es el criterio 1.4.3 de las WCAG, dentro del principio Perceptible."
+  },
+  {
+    id: "U4-1", unidad: "U4", categoria: "ofi", eps: true,
+    titulo: "La libreta de Mateo",
+    pregunta: "Mateo tiene la lista de gastos de agosto, uno debajo del otro, y quiere saber si el transporte le pesa más que la comida. ¿Qué esquema de entrada, proceso y salida resuelve su pregunta?",
+    opciones: [
+      "Entrada: la lista de gastos desordenada, sin fórmulas. Proceso: SUMAR.SI por categoría, con filtros y ordenamiento. Salida: un gráfico de columnas con el total por categoría, con título, y una conclusión.",
+      "Entrada: la lista de gastos. Proceso: SUMA de toda la columna de montos. Salida: un solo número, el total del mes.",
+      "Entrada: la lista de gastos. Proceso: PROMEDIO de los montos. Salida: el gasto promedio por movimiento.",
+      "Entrada: el gráfico por categoría. Proceso: la lista de gastos. Salida: las fórmulas SUMAR.SI."
+    ],
+    correcta: 0,
+    retro: "Para comparar categorías hace falta un total por categoría (SUMAR.SI) y un gráfico armado a partir de ese resumen. B da el total general y no permite comparar. C sirve para detectar un gasto puntual muy alto, no para comparar categorías. D invierte el flujo: el gráfico es una salida, no un punto de partida.",
+    fuente: "C05 (Ferreira-Delgado, 2026j), diapositivas «Entrada → Proceso → Salida, hoy» y «El caso: la libreta de Mateo»; Guía de Excel: Paso a paso (Ferreira-Delgado, 2026h), pasos 9 y 10."
+  },
+  {
+    id: "U4-2", unidad: "U4", categoria: "ofi", eps: false,
+    titulo: "Contar o sumar",
+    pregunta: "Mateo quiere saber cuántos gastos registró en la categoría Transporte (la cantidad de movimientos, no el monto). La celda A10 contiene el texto «Transporte». ¿Qué fórmula usa?",
+    codigo: true,
+    opciones: [
+      "=SUMAR.SI(TablaGastos[Categoría]; A10; TablaGastos[Monto (Gs.)])",
+      "=CONTAR.SI(TablaGastos[Categoría]; A10)",
+      "=CONTAR.SI(A10; TablaGastos[Categoría])",
+      "=PROMEDIO(TablaGastos[Monto (Gs.)])"
+    ],
+    correcta: 1,
+    retro: "B cuenta cuántas filas de la columna Categoría coinciden con A10. A suma montos, y Mateo no pidió un monto. C pone los argumentos al revés: primero va el rango donde se busca y después el criterio. D da el gasto promedio por movimiento.",
+    fuente: "C05 (Ferreira-Delgado, 2026j), diapositiva «Las 4 fórmulas de hoy»; Guía de Excel: Fundamentos y fórmulas (Ferreira-Delgado, 2026g), sección 5."
+  },
+  {
+    id: "U4-3", unidad: "U4", categoria: "ofi", eps: false,
+    titulo: "Estructura de un informe",
+    pregunta: "Armas el documento del eje «Ciberseguridad y datos personales». Tiene dos subtemas: «Amenazas comunes» (con «Phishing e ingeniería social» y «Malware y ransomware») y «Protección de datos». Quieres que Word genere la tabla de contenidos solo. ¿Qué estructura aplicas?",
+    opciones: [
+      "Título 1: Ciberseguridad y datos personales. Título 2: Amenazas comunes y Protección de datos. Título 3: Phishing e ingeniería social y Malware y ransomware, debajo de Amenazas comunes.",
+      "Todo en Título 1, y cambiar tamaño y negrita a mano para que se vea la jerarquía.",
+      "El eje en Título 3, los subtemas en Título 2 y los sub-subtemas en Título 1.",
+      "El eje en Título 1, «Phishing» y «Malware» en Título 2, y «Amenazas comunes» en Título 3."
+    ],
+    correcta: 0,
+    retro: "A respeta la jerarquía real, de lo general a lo específico, y la tabla de contenidos se genera sola desde esos estilos. B se ve ordenado, pero Word no sabe qué es un título, así que no puede armar la tabla. C y D rompen el orden: un subtema no puede quedar por debajo de sus propios sub-subtemas.",
+    fuente: "C04 (Ferreira-Delgado, 2026d), diapositivas «Estilos vs. formato manual» y «Jerarquía de 3 niveles»."
+  },
+  {
+    id: "U6-1", unidad: "U6", categoria: "colab", eps: false,
+    titulo: "Versiones en un trabajo grupal",
+    pregunta: "Dos integrantes completan el esquema del eje temático. Cada uno edita su copia y se la manda al otro por chat: esquema_final.docx, esquema_final_final.docx. Al juntarlas se pisan cambios y nadie sabe cuál es la versión buena. ¿Qué conviene hacer?",
+    opciones: [
+      "Seguir enviándose archivos por chat, llamando «final_final2» a cada nueva copia.",
+      "Trabajar los dos sobre un único archivo compartido en Drive, con edición simultánea, y usar el historial de versiones si hay que volver atrás.",
+      "Que cada uno trabaje en su copia hasta el final y recién ahí pegar todo en un solo documento.",
+      "Descargar el archivo cada vez y subirlo a Drive como archivo nuevo."
+    ],
+    correcta: 1,
+    retro: "B evita las copias paralelas: ambos ven el avance en tiempo real, pueden comentar sobre cada fila y recuperar cualquier cambio anterior. A y D multiplican las versiones, que es el desorden de «final_final». C posterga el problema: el choque de cambios aparece al final y sin que nadie haya visto el avance del otro.",
+    fuente: "C03-3 (Ferreira-Delgado, 2026b), diapositiva «¿Por qué compartir el documento importa?»; C02 (Ferreira-Delgado, 2026c), diapositiva «Anatomía del desorden vs. el orden»."
+  },
+  {
+    id: "U6-2", unidad: "U6", categoria: "colab", eps: false,
+    titulo: "Organizar las carpetas del proyecto",
+    pregunta: "Tu grupo tiene estos archivos: (1) los archivos del juego, (2) la tabla de prompts clave y errores de la IA, (3) la ficha técnica, (4) la lista de fuentes exportada de MyBib, (5) el material complementario de U2. ¿Cuál es la organización correcta en la carpeta de Drive?",
+    opciones: [
+      "01_Juego (1), 02_Bitacora-IA (2), 03_Ficha-Tecnica (3), 04_Fuentes (4), 05_Material-U2 (5).",
+      "Todo suelto en una sola carpeta «Desafio TIC», con nombres como copia_de_final y version_nueva.",
+      "01_Juego (2), 02_Bitacora-IA (1), 03_Ficha-Tecnica (4), 04_Fuentes (3), 05_Material-U2 (5).",
+      "Carpetas por tipo, pero con nombres como «Juego FINAL», «Bitácora nueva (2)» y «U2 cosas»."
+    ],
+    correcta: 0,
+    retro: "A da a cada entregable su carpeta, con nombres numerados y sin espacios, y deja la lista de MyBib en 04_Fuentes. B es la carpeta «Facultad» sin estructura. C tiene buenas carpetas pero archivos cruzados: si no puedes encontrar un dato al instante, el sistema está fallando. D no sigue una convención de nombres clara, que pide nombres sin espacios y con fecha o versión.",
+    fuente: "C02 (Ferreira-Delgado, 2026c), diapositivas «El paradigma del ingeniero» y «Anatomía del desorden vs. el orden»; C03-3 (Ferreira-Delgado, 2026b), diapositiva «Retroalimentación de las Clases 1 y 2» (convención de nombres); Guía MyBib (Ferreira-Delgado, 2026f), paso 6 (carpeta 04_Fuentes)."
+  },
+  {
+    id: "U7-1", unidad: "U7", categoria: "colab", eps: true,
+    titulo: "Diagrama del proceso",
+    pregunta: "Para la ficha técnica necesitas un diagrama del flujo de entrega de una tarea en Moodle. ¿Cuál representa correctamente el proceso?",
+    diagramas: true,
+    opciones: [
+      { cajas: ["Archivo de la tarea terminado", "Subida a Moodle y revisión del sistema", "Entrega registrada"], flechas: true },
+      { cajas: ["Entrega registrada", "Subida a Moodle y revisión del sistema", "Archivo de la tarea terminado"], flechas: true },
+      { cajas: ["Archivo de la tarea terminado", "Entrega registrada"], flechas: true },
+      { cajas: ["Archivo de la tarea terminado", "Subida a Moodle", "Entrega registrada"], flechas: false }
+    ],
+    correcta: 0,
+    retro: "A muestra entrada, proceso y salida en orden, con flechas que indican el sentido del flujo. B tiene el flujo invertido. C omite el proceso, que es donde el sistema hace su trabajo. D no deja ver el orden, y un diagrama sin conexiones no representa un proceso.",
+    fuente: "C02 (Ferreira-Delgado, 2026c), diapositivas «El Modelo EPS en la vida real» y «Mapeo del flujo de entrega académica»."
+  },
+  {
+    id: "U9-1", unidad: "U9", categoria: "inv", eps: false,
+    titulo: "Cita correcta",
+    pregunta: "Para la ficha técnica necesitas citar un artículo en APA. ¿Cuál es la referencia correcta?",
+    opciones: [
+      "Popek, G. J., y Goldberg, R. P. (1974). Formal requirements for virtualizable third generation architectures. Communications of the ACM, 17(7), 412–421. https://doi.org/10.1145/361011.361073",
+      "Gerald Popek. Formal requirements for virtualizable third generation architectures. CACM. Sacado de internet.",
+      "Popek y Goldberg (consultado 2026). Virtualización. Communications of the ACM.",
+      "Popek, G. J. Formal requirements for virtualizable third generation architectures. 412–421."
+    ],
+    correcta: 0,
+    retro: "B no tiene segundo autor, año, volumen, páginas ni DOI, y el nombre no está en formato APA. C pone la fecha de consulta como año (va el de publicación) y cambia el título. D omite al coautor, el año, la revista, el volumen y el DOI.",
+    fuente: "Guía MyBib (Ferreira-Delgado, 2026f), secciones «5. Verificar cada cita» y «Cita correcta y cita incorrecta»."
+  },
+  {
+    id: "U9-2", unidad: "U9", categoria: "inv", eps: false,
+    titulo: "Uso ético de la IA",
+    pregunta: "Vas a entregar un informe académico. ¿Qué uso de la IA es ético?",
+    opciones: [
+      "Pedirle el texto completo y entregarlo sin mencionarlo",
+      "Pedirle una estructura para ordenar lo que ya investigaste, verificar los datos y declarar que la usaste",
+      "Pedirle una cita de libro con autor, año y página, y copiarla",
+      "Pedirle la bibliografía y pegarla sin revisar"
+    ],
+    correcta: 1,
+    retro: "B sigue la regla del curso: investigar primero con fuentes propias y usar la IA para organizar lo ya sabido. Además verifica y declara el uso, como recomienda UNESCO (2023). C y D arriesgan una alucinación: hay que buscar cada cita en Google Académico antes de usarla. A viola la responsabilidad intelectual sobre el trabajo.",
+    fuente: "UNESCO (2023); C03-2 (Ferreira-Delgado, 2026i), sección 8; C03-3 (Ferreira-Delgado, 2026b), regla del curso; Guía MyBib (Ferreira-Delgado, 2026f), apartado «Si la cita la dio una IA»."
+  }
+];

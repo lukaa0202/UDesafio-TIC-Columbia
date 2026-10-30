@@ -1,0 +1,63 @@
+{
+  "formato": "depurador-tic-banco",
+  "version": 1,
+  "descripcion": "Ejemplo de ampliación: 3 retos de muestra. Antes de usarlos en clase, revisar y reemplazar la fuente por la del material de la cátedra.",
+  "retos": [
+    {
+      "id": "EJ-U4-1",
+      "unidad": "U4",
+      "categoria": "ofi",
+      "titulo": "Promedio de notas",
+      "terminal": "Planilla de notas",
+      "log": "La planilla no calcula el promedio del curso.",
+      "pregunta": "Las notas del curso están en el rango B2:B10. ¿Qué fórmula calcula su promedio?",
+      "opciones": [
+        "=PROMEDIO(B2:B10)",
+        "=SUMA(B2:B10)",
+        "=CONTAR(B2:B10)",
+        "=MAX(B2:B10)"
+      ],
+      "correcta": 0,
+      "codigo": true,
+      "retro": "A suma los valores del rango y divide por la cantidad de valores. B solo suma, C cuenta cuántas celdas tienen números y D devuelve la nota más alta.",
+      "fuente": "Ejemplo de ampliación: completar con la fuente del material de clase de la U4."
+    },
+    {
+      "id": "EJ-U3-1",
+      "unidad": "U3",
+      "categoria": "busq",
+      "titulo": "Buscar en un solo sitio",
+      "terminal": "Buscador del portal",
+      "log": "Las búsquedas traen resultados de cualquier sitio.",
+      "pregunta": "Quieres encontrar documentos sobre accesibilidad publicados solo en el sitio unesco.org. ¿Qué escribes en el buscador?",
+      "opciones": [
+        "accesibilidad site:unesco.org",
+        "accesibilidad unesco.org",
+        "accesibilidad -unesco.org",
+        "accesibilidad filetype:unesco.org"
+      ],
+      "correcta": 0,
+      "codigo": true,
+      "retro": "A usa el operador site:, que limita los resultados a ese dominio. B solo agrega la palabra unesco.org a la búsqueda, C excluye ese término y D usa filetype:, que sirve para tipos de archivo (pdf, docx), no para sitios.",
+      "fuente": "Ejemplo de ampliación: completar con la fuente del material de clase de la U3."
+    },
+    {
+      "id": "EJ-U9-1",
+      "unidad": "U9",
+      "categoria": "inv",
+      "titulo": "Cita parentética",
+      "terminal": "Atril de citas",
+      "log": "Una paráfrasis quedó sin su cita.",
+      "pregunta": "Parafraseas una idea de un artículo de Ana Pérez publicado en 2024. Según APA 7, ¿cuál es la cita parentética correcta?",
+      "opciones": [
+        "(Pérez, 2024)",
+        "(Ana Pérez 2024)",
+        "(2024, Pérez)",
+        "[Pérez - 2024]"
+      ],
+      "correcta": 0,
+      "retro": "A sigue el formato autor-fecha de APA 7: apellido, coma y año entre paréntesis. B incluye el nombre de pila y omite la coma, C invierte el orden y D usa corchetes y guion.",
+      "fuente": "Ejemplo de ampliación: completar con la fuente del material de clase de la U9."
+    }
+  ]
+}

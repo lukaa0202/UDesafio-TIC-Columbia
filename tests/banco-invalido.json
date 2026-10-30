@@ -1,0 +1,80 @@
+{
+  "formato": "depurador-tic-banco",
+  "version": 1,
+  "retos": [
+    {
+      "id": "U1-1",
+      "unidad": "U1",
+      "categoria": "fund",
+      "pregunta": "Duplicado de un original",
+      "opciones": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "correcta": 0,
+      "retro": "Texto de prueba suficiente.",
+      "fuente": "Prueba"
+    },
+    {
+      "id": "MAL-1",
+      "unidad": "Unidad 1",
+      "categoria": "fund",
+      "pregunta": "¿Pregunta con 3 opciones?",
+      "opciones": [
+        "a",
+        "b",
+        "c"
+      ],
+      "correcta": 5,
+      "retro": "corta",
+      "fuente": ""
+    },
+    {
+      "id": "MAL-2",
+      "unidad": "U2",
+      "categoria": "nada",
+      "pregunta": "Otra pregunta de prueba",
+      "opciones": [
+        "x",
+        "x",
+        "y",
+        "z"
+      ],
+      "correcta": 1,
+      "retro": "Explicación de prueba válida.",
+      "fuente": "Prueba"
+    },
+    {
+      "id": "BIEN-1",
+      "unidad": "U2",
+      "categoria": "virt",
+      "pregunta": "Pregunta válida de prueba para QA",
+      "opciones": [
+        "uno",
+        "dos",
+        "tres",
+        "cuatro"
+      ],
+      "correcta": 2,
+      "retro": "Explicación de prueba válida.",
+      "fuente": "Prueba de QA"
+    },
+    {
+      "id": "BIEN-1",
+      "unidad": "U2",
+      "categoria": "virt",
+      "pregunta": "Id repetido dentro del archivo",
+      "opciones": [
+        "uno",
+        "dos",
+        "tres",
+        "cuatro"
+      ],
+      "correcta": 2,
+      "retro": "Explicación de prueba válida.",
+      "fuente": "Prueba de QA"
+    }
+  ]
+}
